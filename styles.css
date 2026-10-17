@@ -1,0 +1,70 @@
+:root {
+  --bg: #0F1412;
+  --card: #18201C;
+  --card2: #1F2A25;
+  --line: #2C3832;
+  --text: #F2EFE6;
+  --muted: #9AA8A0;
+  --green: #17A865;
+  --green-d: #0B5E3A;
+  --gold: #E8B53A;
+  --red: #E0624F;
+  --radius: 16px;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; line-height: 1.45; }
+body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+
+.top { display: flex; align-items: center; gap: 12px; padding: calc(14px + env(safe-area-inset-top)) 16px 10px; }
+.logo { width: 40px; height: 40px; border-radius: 11px; }
+h1 { margin: 0; font-size: 21px; letter-spacing: .2px; }
+h2 { font-size: 18px; margin: 0 0 10px; }
+h3 { font-size: 15px; margin: 0 0 6px; }
+.muted { color: var(--muted); margin: 0; font-size: 14px; }
+main { padding: 4px 16px 16px; max-width: 640px; margin: 0 auto; }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; margin-bottom: 14px; }
+.card.hero { background: linear-gradient(135deg, var(--green-d), #083C26); border: none; }
+.card.warn { border-color: #5A4618; background: #221D10; }
+.pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 99px; background: rgba(255,255,255,.12); margin-right: 6px; }
+.pill.gold { background: var(--gold); color: #1d1600; }
+
+.row { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-top: 1px solid var(--line); }
+.row:first-of-type { border-top: none; }
+.row .grow { flex: 1; min-width: 0; }
+.row small { color: var(--muted); display: block; font-size: 13px; }
+.time { font-variant-numeric: tabular-nums; color: var(--gold); font-weight: 700; font-size: 14px; width: 46px; flex: none; }
+
+.check { appearance: none; width: 26px; height: 26px; border-radius: 8px; border: 2px solid var(--line); background: var(--card2); flex: none; display: grid; place-items: center; cursor: pointer; }
+.check:checked { background: var(--green); border-color: var(--green); }
+.check:checked::after { content: "✓"; color: #fff; font-weight: 800; font-size: 15px; }
+.done .grow b, .done .grow span { text-decoration: line-through; opacity: .55; }
+
+.bar { height: 9px; background: var(--card2); border-radius: 99px; overflow: hidden; margin: 6px 0 2px; }
+.bar > i { display: block; height: 100%; background: var(--green); border-radius: 99px; transition: width .3s; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat { background: var(--card2); border-radius: 12px; padding: 12px; }
+.stat b { font-size: 22px; display: block; }
+
+.seg { display: flex; background: var(--card2); border-radius: 12px; padding: 4px; gap: 4px; margin-bottom: 14px; overflow-x: auto; }
+.seg button { flex: 1; border: 0; background: none; color: var(--muted); padding: 9px 6px; border-radius: 9px; font: inherit; font-size: 14px; font-weight: 600; white-space: nowrap; cursor: pointer; }
+.seg button.on { background: var(--green); color: #fff; }
+
+button.btn { width: 100%; border: 0; border-radius: 12px; padding: 13px; font: inherit; font-weight: 700; background: var(--green); color: #fff; cursor: pointer; }
+button.btn.ghost { background: var(--card2); color: var(--text); }
+label { display: block; font-size: 13px; color: var(--muted); margin: 10px 0 4px; }
+input, select { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--card2); color: var(--text); font: inherit; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+ul.tips { margin: 0; padding-left: 18px; }
+ul.tips li { margin: 6px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+td { padding: 9px 4px; border-top: 1px solid var(--line); vertical-align: top; }
+td.r { text-align: right; white-space: nowrap; }
+.chart { width: 100%; height: 170px; }
+
+.tabs { position: fixed; bottom: 0; left: 0; right: 0; display: flex; background: rgba(15,20,18,.96); backdrop-filter: blur(10px); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom); }
+.tabs button { flex: 1; background: none; border: 0; color: var(--muted); font: inherit; font-size: 11px; font-weight: 600; padding: 9px 0 10px; display: flex; flex-direction: column; align-items: center; gap: 3px; cursor: pointer; }
+.tabs button span { font-size: 16px; line-height: 1; }
+.tabs button.active { color: var(--gold); }
